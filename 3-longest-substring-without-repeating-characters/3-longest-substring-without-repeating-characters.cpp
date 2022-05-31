@@ -11,8 +11,7 @@ public:
         while(b_ptr < s.length()){
             //search for element in the hash map
             if(hashset.find(s[b_ptr]) == hashset.end()){
-                hashset.insert(s[b_ptr]);
-                b_ptr++;
+                hashset.insert(s[b_ptr++]);
                 max_len = hashset.size() >= max_len ? hashset.size(): max_len;
             }
             else{
