@@ -9,14 +9,16 @@ public:
         
         //Until the end of the 
         while(b_ptr < s.length()){
-            //search for element in the hash map
+            //search for a duplicate of the element is found in the hash set
             if(hashset.find(s[b_ptr]) == hashset.end()){
+                // insert element at right-hand ptr to the hash set
                 hashset.insert(s[b_ptr]);
                 b_ptr++;
                 //max function, because leetcode giving me error when using max function
                 max_len = hashset.size() > max_len? hashset.size(): max_len ;
             }
             else{
+                // erase the element at the left-hand ptr from the hash set when a duplicate is found
                 hashset.erase(s[a_ptr]);
                 a_ptr++;
                 
