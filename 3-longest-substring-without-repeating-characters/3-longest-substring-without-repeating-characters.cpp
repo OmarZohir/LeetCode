@@ -13,6 +13,7 @@ public:
             if(hashset.find(s[b_ptr]) == hashset.end()){
                 hashset.insert(s[b_ptr]);
                 b_ptr++;
+                //max function, because leetcode giving me error when using max function
                 max_len = hashset.size() > max_len? hashset.size(): max_len ;
             }
             else{
