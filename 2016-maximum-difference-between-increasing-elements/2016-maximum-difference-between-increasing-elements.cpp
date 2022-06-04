@@ -2,15 +2,18 @@ class Solution {
 public:
     int maximumDifference(vector<int>& nums) {
         // naive solution
-        int maxDiff = -1;
-        for (int i = 0; i < nums.size(); i++){
-            for (int j = i+1; j < nums.size(); j++){
-                if((nums[j] - nums[i]) > maxDiff){
-                    maxDiff = nums[j] - nums[i];
-                }
+        int maxIdx = -1;
+        int maxNum = 0;
+        int maxDiff;
+        for (int i = nums.size()-1; i > -1 ; i--){
+            if (i > 0 && nums[i] > maxNum){
+                maxIdx = i; 
+                maxNum = nums[i];
             }
-        }    
-        if (maxDiff == 0)
+            else if (maxNum - nums[i] > maxDiff)
+                maxDiff = maxNum-nums[i];
+        }  
+        if (maxDiff <= 0)
             return -1;
         else
             return maxDiff;
