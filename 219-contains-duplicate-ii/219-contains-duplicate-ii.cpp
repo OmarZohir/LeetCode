@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //FIXED SLIDING WINDOW PROBLEM
     bool containsNearbyDuplicate(vector<int>& nums, int k) {
         if(k==0) return false;
         //count of number of elements in the window k
