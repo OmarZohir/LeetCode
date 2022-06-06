@@ -4,6 +4,7 @@ public:
     bool containsNearbyDuplicate(vector<int>& nums, int k) {
         if(k==0) return false;
         //count of number of elements in the window k
+        //HASH SET IS A BETTER FIT HERE, BUT I AM NOT GOING TO change my solution
         unordered_map<int, int> count_table_k;
         // loop over the first k elements in the array from the left-hand side
         for (int i = 0; i <= k && i < nums.size(); i++){
