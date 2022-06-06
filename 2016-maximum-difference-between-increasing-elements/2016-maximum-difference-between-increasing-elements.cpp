@@ -2,18 +2,15 @@ class Solution {
 public:
     int maximumDifference(vector<int>& nums) {
         // naive solution
-        int maxNum = 0;
-        int maxDiff;
-        for (int i = nums.size()-1; i > -1 ; i--){
-            if (i > 0 && nums[i] > maxNum){
-                maxNum = nums[i];
+        int max_so_far = nums.back(); // assume largest number is the one on the right
+        int max_diff = -1 ; // return -1 if no max difference matching criteria found
+        // Keep on searching for the max number from the right towards the left (because of the criteria)
+        for (int i = nums.size()-2; i >= 0; i--){
+            if (nums[i] < max_so_far){
+                max_diff = max(max_diff, max_so_far - nums[i]);
             }
-            else if (maxNum - nums[i] > maxDiff)
-                maxDiff = maxNum-nums[i];
+            max_so_far = max(max_so_far, nums[i]);
         }  
-        if (maxDiff <= 0)
-            return -1;
-        else
-            return maxDiff;
+        return max_diff;
     }
 };
