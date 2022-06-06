@@ -22,7 +22,7 @@ public:
                 count += prefix_table[prefix_sum - k];
             
             // increase the value of the number of times the prefix sum occurred
-            ++prefix_table[prefix_sum];
+            prefix_table[prefix_sum]++;
             
         }
         return count;
