@@ -9,8 +9,11 @@ public:
             //if zeros > k, invalid window, shift from the left-hand side until you get a valid window
             // that satisfies the condition
             while(zeros > k){
+                //if number being shifted from the left is a zero
+                // then decrease the number of zeros we have seen
                 if(nums[start] == 0)
                     zeros--;
+                //shift to the left
                 start++;
             }
             max_length = max(max_length, end-start+1); // end-start+1 = length of the current window
