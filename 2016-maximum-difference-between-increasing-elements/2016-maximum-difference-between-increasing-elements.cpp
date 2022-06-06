@@ -7,7 +7,7 @@ public:
         // Keep on searching for the max number from the right towards the left (because of the criteria)
         for (int i = nums.size()-2; i >= 0; i--){
             if (nums[i] < max_so_far){
-                max_diff = max(max_diff, max_so_far - nums[i]);
+                max_diff = max_diff > (max_so_far - nums[i])? max_diff : (max_so_far - nums[i]);
             }
             max_so_far = max(max_so_far, nums[i]);
         }  
