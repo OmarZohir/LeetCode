@@ -12,7 +12,7 @@ public:
                end++;
            }
             else{
-                //if 0 and we have already flipped maximum number of 0s
+                //if  the digit is 0 and we have already flipped maximum number of 0s
                 if(k == 0){
                     //check/unflip the previous first element
                     if(nums[start] == 0){
