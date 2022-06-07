@@ -6,7 +6,7 @@ public:
             //if it's zero
             if(nums[end] == 0)
                 zeros++;
-            //if zeros > k, invalid window, shift from the left-hand side until you get a valid window
+            //if zeros > k, invalid window, shift from the left-hand side to the right until you get a valid window
             // that satisfies the condition
             while(zeros > k){
                 //if number being shifted from the left is a zero
