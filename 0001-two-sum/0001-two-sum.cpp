@@ -2,20 +2,16 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> sol;
-        std::vector<int>::iterator it;
+        std::unordered_map<int,int> numMap;
         for (int i = 0; i < nums.size(); ++i) {
-            int k = target - nums[i];
-            // Search if k exists in the rest of the vector
-            it = std::find(nums.begin(), nums.end(), k);
-            if (it != nums.end()) {
-                int index = it - nums.begin();
-                // Ensure that the same element is not used twice
-                if (index != i) {
-                    sol.push_back(i);
-                    sol.push_back(index);
-                    break; // Assuming there is exactly one solution
-                }
+            int complement = target - nums[i];
+            // search if the complement has already been added into the map
+            if (numMap.find(complement) != numMap.end()) {
+                sol.push_back(numMap[complement]);
+                sol.push_back(i);
+                break;
             }
+            numMap[nums[i]] = i; // Store the number and its index in the hashmap
         }
         return sol;
     }
