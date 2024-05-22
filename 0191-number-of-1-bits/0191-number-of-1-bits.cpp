@@ -3,10 +3,10 @@ public:
     int hammingWeight(int n) {
         int count = 0;
         while (n > 0){
-            if (n%2 == 1)
-                count++;
+            // ANDing the number with n-1 removes the most right-hand side one of the number
+            n &= (n-1);
             
-            n = n/2;
+            count++;
         }
         return count;
     }
